@@ -14,4 +14,4 @@ subplot(2,1,2);
 stem(ang);
 title('Angle Plot');
 xlabel('n--->');
-ylabel('Angle')
+ylabel('Angle');

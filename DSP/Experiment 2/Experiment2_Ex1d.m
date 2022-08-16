@@ -21,4 +21,4 @@ xlabel('t---->')
 subplot(4,1,4);
 plot(t,d);
 title('Multi-Tone Signal');
-xlabel('t---->')
+xlabel('t---->');

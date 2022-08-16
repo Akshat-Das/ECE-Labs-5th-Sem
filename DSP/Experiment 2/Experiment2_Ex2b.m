@@ -8,4 +8,4 @@ a = x.*u;
 stem(n,a);
 title('Magnitude Plot');
 xlabel('n--->');
-ylabel('Amplitude')
+ylabel('Amplitude');

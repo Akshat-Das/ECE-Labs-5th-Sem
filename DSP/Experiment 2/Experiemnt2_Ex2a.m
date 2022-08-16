@@ -8,4 +8,4 @@ u = u1-u2;
 stem(n,u);
 title('u[n]-u[n-3]');
 xlabel('n--->');
-ylabel('Amplitude')
+ylabel('Amplitude');

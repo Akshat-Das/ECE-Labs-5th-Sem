@@ -13,4 +13,4 @@ ans1 = conv(h,x);
 stem(ans1);
 title('Magnitude Plot');
 xlabel('n--->');
-ylabel('Amplitude')
+ylabel('Amplitude');

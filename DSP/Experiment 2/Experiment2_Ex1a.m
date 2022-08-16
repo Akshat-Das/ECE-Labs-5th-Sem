@@ -12,5 +12,5 @@ subplot(3,1,2);
 stem(k,b);
 title('2^k');
 subplot(3,1,3);
-stem(k,c);
+stem(k,c)
 title('-2^k');

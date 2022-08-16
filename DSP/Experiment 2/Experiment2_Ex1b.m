@@ -13,4 +13,4 @@ plot(k,b);
 title('50% Duty Cycle');
 subplot(3,1,3);
 plot(k,c);
-title('75% Duty Cycle');
+title('75% Duty Cycle')
