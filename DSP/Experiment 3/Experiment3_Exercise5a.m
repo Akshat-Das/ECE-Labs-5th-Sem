@@ -1,0 +1,13 @@
+clear all;
+clc;
+g = [1 -3 4 2 0 -2];
+h = [3 0 1 -1 2 1];
+c1 = conv(g,h);
+c2 = cconv(g,h,11);
+g1 = [g zeros(1,11-length(g))];
+h1 = [h zeros(1,11-length(h))];
+c3 = ifft(fft(g1).*fft(h1));
+subplot(3,1,1), stem(c1);
+title("Linear Convulation");
+subplot(3,1,2), stem(c2), title("Circular Convulation");
+subplot(3,1,3), stem(c3), title("Linear Convulation using Circular Convulation");

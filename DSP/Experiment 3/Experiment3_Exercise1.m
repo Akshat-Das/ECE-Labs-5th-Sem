@@ -1,0 +1,15 @@
+clear all;
+close all;
+clc;
+w = (0:1:500) * pi/500;
+x = exp(1j*(w-pi/3)) ./ (exp(1j*(w -pi/3))-0.9);
+subplot(1,2,1);
+plot(w,abs(x));
+title("Magnitude Response");
+xlabel("w");
+ylabel("amplitude");
+subplot(1,2,2);
+plot(w,angle(x));
+title("Phase Response");
+xlabel("W(Rad)");
+ylabel("Angle");

@@ -1,0 +1,17 @@
+n = 0:100;
+u = n >= 0;
+rn = rand(1,length(n));
+x = (0.9.^n).*u + rn;
+a = [1 0 0];
+b = [1/3 1/3 1/3];
+N = 512;
+[h, w] = freqz(b,a,N,'whole');
+subplot(3,1,1);
+plot(w,abs(h));
+title("Magnitude Response"),xlabel("W(rad)"),ylabel("Amplitude");
+subplot(3,1,2);
+plot(n,x);
+y = filter(b,a,x);
+subplot(3,1,3);
+plot(n,y);
+title("Output");

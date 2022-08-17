@@ -1,0 +1,17 @@
+clear all;
+clc;
+Fs = 1000;
+t = 0:1/Fs:1;
+x = sin(2*pi*30*t) + sin(2*pi*80*t) + sin(2*pi*120*t);
+X = fft(x);
+l = length(X/2);
+f = (0:(l-1))*Fs/(2*l);
+subplot(2,1,1), plot(t,x);
+title("Multitone Signal");
+xlabel("Time in sec");
+ylabel("Amplitude");
+subplot(2,1,2);
+plot(f,abs(X(1:l)));
+zoom on;
+title("Magnitude Response");
+ylabel("Amplitude");
