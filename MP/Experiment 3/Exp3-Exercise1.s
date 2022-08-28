@@ -2,8 +2,8 @@
 ENTRY
 	LDR R7,=0X4
 	LDR R9,=0X6
-	LDR R1,=0X4545
-	LDR R2,=0X9954
+	LDR R1,=0X4545 ;Number  to be Added
+	LDR R2,=0X9954; 2nd Number to be added
 	LDR R3,=0X000F
 LOOP AND R4,R1,R3
 	AND R5,R2,R3
