@@ -1,0 +1,44 @@
+IO0DIR	EQU	0XE0028008
+IO0SET	EQU	0XE0028004
+IO0CLR	EQU 0XE002800C
+  AREA CHANG, CODE, READONLY
+	EXPORT __main
+__main
+	ENTRY
+		LDR	R1,=IO0DIR
+		LDR	R0,=0X900
+		STR	R0,[R1]
+		LDR	R2,=IO0CLR
+		LDR	R3,=IO0SET
+		;LDR	R5,=0X800
+		LDR	R6,=0X100
+		STR	R0,[R2]
+BACK	STR	R6,[R3]
+		BL	delay
+		STR	R0,[R2]
+		BL delay
+		STR	R0,[R3]
+		BL	delay2
+		STR	R0,[R2]
+		BL	delay2
+		STR	R0,[R3]
+		BL	delay3
+		STR	R0,[R2]
+		BL	delay3
+		B	BACK
+delay	;subroutine
+		LDR	R4,=0X2FF
+up		SUBS R4,R4,#1
+		BNE	up
+		BX	LR
+delay2	;subroutine
+		LDR	R6,=0X10F
+up2		SUBS R6,R6,#1
+		BNE	up2
+		BX	LR
+delay3	;subroutine
+		LDR	R5,=0X2FFFF
+up3		SUBS R5,R5,#1
+		BNE	up3
+		BX	LR
+		END
