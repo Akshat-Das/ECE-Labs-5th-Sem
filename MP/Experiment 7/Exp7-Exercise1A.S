@@ -1,0 +1,13 @@
+  INCLUDE VICVPB.S
+    AREA CHANG, CODE, READONLY
+    EXPORT __main
+__main
+    ENTRY 
+        LDR R1,=IO0DIR
+        LDR R0,=0XFF0000
+        STR R0,[R1]
+        LDR R3,=IO0PIN
+BACK    STR R4,[R3]
+		ADD R4,R4,#0X10000
+        B   BACK
+		END

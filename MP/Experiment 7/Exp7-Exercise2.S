@@ -1,0 +1,16 @@
+  INCLUDE VICVPB.S
+    AREA CHANG, CODE, READONLY
+    EXPORT __main
+__main
+    ENTRY 
+        LDR R1,=IO0DIR
+        LDR R0,=0XFF0000
+        STR R0,[R1]
+		LDR R5,=0X80
+        LDR R3,=IO0PIN
+ADDER	ADD R4,R4,#0XF
+		ADD R6,R4,#0X1
+		MUL R7,R6,R5
+		STR R7,[R3]
+		B ADDER
+        END
