@@ -1,0 +1,13 @@
+m = 20;
+alpha = (m-1)/2;
+hrs = [zeros(1,4),1,1,zeros(1,14)];
+k1 = 0:floor((m-1)/2);
+k2 = floor((m-1)/2)+1:m-1;
+angh = [-alpha*(2*pi)*k1/m,alpha*(2*pi)*(m-k2)/m];
+h = hrs.*exp(1i*angh);
+h1 = real(ifft(h,m));
+[h,w] = freqz(h1,1,1024);
+plot(w/pi,20*log10(abs(h)));
+zoom on; grid on; title("FIR LPF using frequency sampling design");
+xlabel("Normalized Frequency");
+ylabel("Gain in db");
